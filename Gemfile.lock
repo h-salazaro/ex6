@@ -12,6 +12,8 @@ GEM
     diff-lcs (1.2.5)
     faker (1.6.3)
       i18n (~> 0.5)
+    haml (4.0.7)
+      tilt
     i18n (0.7.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -53,6 +55,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   faker
+  haml
   rspec
   sinatra
 
