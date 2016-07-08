@@ -1,0 +1,7 @@
+%h1= @course.name
+
+%h3 Students
+%ul
+  - @course.students.each_with_index do |student, index|
+    %li
+      %a{ href: url("/#{@course.id}/#{index}") }= student.name

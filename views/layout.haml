@@ -11,9 +11,12 @@
         margin: 0 auto;
       }
     .wrapper
+      .header
+        %a{ href: url('/') }
+          Home
       = yield
       %p
         %small 
-          Copyright &copy;
+          Copyright Salazar &copy;
           = Time.now.year
 

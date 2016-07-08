@@ -2,4 +2,13 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+gem 'sinatra'
+
+gem 'faker'
+
+group :development, :test do
+  gem 'rspec'
+  gem 'capybara'
+end
+
 # gem "rails"

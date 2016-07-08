@@ -1,1 +1,21 @@
-%h1 Hello, world
+%h1 Schools, courses and students
+%h3 Exercise 5 and six for Acc Training
+%br
+%h4 What this does
+%p
+  Code-level I'm mounting a Sinatra application, pretty simple, which shows a list
+  of schools and 15 students for each. Data is generated with
+  %strong 
+    %a{ href: "https://github.com/stympy/faker" }Faker
+  so none of it is real, and it changes on every reload.
+
+%h3 This is a list of the current courses and their students
+
+%ul
+  - @courses.each_with_index do |course, i|
+    %li
+      %a{ href: "/#{i}" }=course.name
+    %ul
+      - course.students.each do |student|
+        %li= student.name
+    
