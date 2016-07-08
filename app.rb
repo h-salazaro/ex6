@@ -23,10 +23,10 @@ class Demo < Sinatra::Application
   end
 
   class Student
-    attr_reader :name, :course
+    attr_reader :name, :about
 
-    def initialize(name)
-      @name = name
+    def initialize(name, about)
+      @name, @about = name, about
     end
   end
 
@@ -45,7 +45,7 @@ class Demo < Sinatra::Application
   6.times do |i|
     course = Course.new( Faker::University.name, rand(20..30), i )
     10.times do
-      course.add_student( Student.new(Faker::Name.name) )
+      course.add_student( Student.new(Faker::Name.name, Faker::Lorem.paragraph) )
     end
     school.courses << course
   end

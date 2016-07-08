@@ -6,15 +6,27 @@
   Code-level I'm mounting a Sinatra application, pretty simple, which shows a list
   of schools and 15 students for each. Data is generated with
   %strong 
-    %a{ href: "https://github.com/stympy/faker" }Faker
-  so none of it is real, and it changes on every reload.
+    %a{ href: "https://github.com/stympy/faker" }Faker*
+  so none of it is real, and it changes on every page reload.
+
+%p
+  Beneath this there's a tiny API on how the school, course and student 
+  classes are structured.
+  Here's the 
+  %a{ href: "https://github.com/h-salazaro/ex6" } github repository
+  so you can see the code for yourself.
+
+%p
+  %small
+    * Faker has a generator for Course's names, but it is not working, so I used 
+    a University name generator instead.
 
 %h3 This is a list of the current courses and their students
 
 %ul
   - @courses.each_with_index do |course, i|
     %li
-      %a{ href: "/#{i}" }=course.name
+      %a{ href: "/#{i}" }= course.name
     %ul
       - course.students.each do |student|
         %li= student.name
